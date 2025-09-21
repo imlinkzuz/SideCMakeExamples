@@ -21,6 +21,6 @@ cmake --build . --target install --config Release
 cmake --build . --target install --config Debug
 ```
 
-[!TIP]
+> [!TIP]
 > All installed files will be located in `/path/to/HelloWorld/../_install/default`.
 
