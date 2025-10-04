@@ -1,0 +1,17 @@
+include(${SIDECMAKE_DIR}/SCInstall.cmake)
+
+sc_install_library(
+  TARGET_NAME "libTime"
+  PROJECT_NAME ${PROJECT_NAME}
+  LINK_TYPE STATIC
+  TARGET_PROPERTIES 
+    VERSION ${PROJECT_VERSION}
+    CXX_VISIBILITY_PRESET hidden
+    VISIBILITY_INLINES_HIDDEN YES
+  PRIVATE_SOURCES
+    my_time.cpp
+  PUBLIC_DEPENDENCIES
+    fmt 
+  PUBLIC_INCLUDE_DIRS
+    "include/sample/libtime"
+)
