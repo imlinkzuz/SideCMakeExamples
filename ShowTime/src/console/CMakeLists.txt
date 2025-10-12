@@ -5,6 +5,6 @@ sc_install_executable(
   PRIVATE_SOURCES
     main.cpp
   PRIVATE_DEPENDENCIES
-    ShowTime::libTime
+    libTime
     spdlog
 )

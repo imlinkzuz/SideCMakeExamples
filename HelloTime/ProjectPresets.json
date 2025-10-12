@@ -10,8 +10,8 @@
             "name": "conf-project",
             "hidden": true,
             "cacheVariables" : {
-                "SC_PROJECT_NAME" : "sample",
-                "SC_PROJECT_DESCRIPTION" : "A sample for your C++ CMake development environment.",
+                "SC_PROJECT_NAME" : "HelloTime",
+                "SC_PROJECT_DESCRIPTION" : "A showcase for SideCMake external dependency.",
                 "SC_PROJECT_VERSION" : "1.0.0.0",
                 "SC_PROJECT_NAMESPACE" : "sample.project",
                 "SC_PROJECT_LANGUAGES" : "C;CXX",

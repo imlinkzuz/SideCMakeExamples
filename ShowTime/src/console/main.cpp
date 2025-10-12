@@ -20,6 +20,6 @@ int main(int argc, char *argv[])
     sample::MyTime myTime;
     spdlog::info("Project Name: {}", ShowTime::PROJECT_NAME);
     spdlog::info("Project Version: {}", ShowTime::PROJECT_VERSION);
-    spdlog::info("Current Time is : {}", myTime.toString());
+    spdlog::info("Current Time is : {}", myTime.now());
     return 0;
 }

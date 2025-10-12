@@ -27,8 +27,9 @@ namespace sample
     tm.tm_min  = minute;
     tm.tm_sec  = second;
     tm.tm_isdst = -1;
+  #ifndef _MSC_VER  
     tm.tm_zone = nullptr;
-
+  #endif
     // Convert time_t to time_point
     return MyTime{tm};
   }
@@ -53,7 +54,7 @@ namespace sample
     auto now = std::chrono::system_clock::now();// Get current time point
 
     // Format the time point
-    return fmt::format("Current time: {:%Y-%m-%d %H:%M:%S}", now);
+    return fmt::format("{:%Y-%m-%d %H:%M:%S}", now);
   }
 
 /**

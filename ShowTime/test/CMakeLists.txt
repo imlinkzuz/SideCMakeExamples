@@ -5,7 +5,7 @@ sc_add_unit_test(
   VERSION_MATCHES
   TARGETS
       console
-      libTime    
+      ShowTime::libTime    
   TEST_SOURCES
       main.cpp
 )

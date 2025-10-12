@@ -24,7 +24,7 @@ function(myproject_setup_dependencies)
      REQUIRED CONFIG
  )
 
- sc_find_package(PKG_TARGET ShowTime::libtime 
+ sc_find_package(PKG_TARGET ShowTime::libTime 
    PKG_OPTIONS 
      REQUIRED CONFIG
  )

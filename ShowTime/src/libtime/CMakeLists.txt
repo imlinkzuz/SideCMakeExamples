@@ -12,6 +12,7 @@ sc_install_library(
     my_time.cpp
   PUBLIC_DEPENDENCIES
     fmt 
-  PUBLIC_INCLUDE_DIRS
+  INSTALLED_INCLUDE_DIRS 
     "include/sample/libtime"
+
 )

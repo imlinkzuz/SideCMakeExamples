@@ -3,9 +3,9 @@ cmake_minimum_required(VERSION 3.28)
 # Try to include the SideCMake initialization file
 if (NOT DEFINED SIDECMAKE_DIR)
   if (DEFINED ENV{SIDECMAKE_DIR})
-      set(SIDECMAKE_DIR $ENV{SIDECMAKE_DIR} CACHE INTERNAL "The root path of SideCMake")
+      set(SIDECMAKE_DIR $ENV{SIDECMAKE_DIR} CACHE PATH "The root path of SideCMake")
     else()
-      set(SIDECMAKE_DIR ${CMAKE_SOURCE_DIR}/SideCMake CACHE INTERNAL "The root path of SideCMake")
+      set(SIDECMAKE_DIR ${CMAKE_SOURCE_DIR}/SideCMake CACHE PATH "The root path of SideCMake")
   endif()
 endif()
 
@@ -39,9 +39,10 @@ myproject_local_options()
 add_library(${PROJECT_NAME}::SC_BUILD_OPTIONS ALIAS SC_BUILD_OPTIONS)
 add_library(${PROJECT_NAME}::SC_BUILD_WARNINGS ALIAS SC_BUILD_WARNINGS)
 
+
 # Compile definitions
 add_compile_definitions(
-    SC_OS_${SC_RUNTIME_OS_NAME}
+    SC_OS_${Z_SC_RUNTIME_OS_NAME}
 )
 
 # Adding the src
@@ -60,18 +61,20 @@ if(MSVC)
 endif()
 
 # set the startup project for the "play" button in MSVC
-set_property(DIRECTORY PROPERTY VS_STARTUP_PROJECT ${SC_PROJECT_NAME})
+# Unless you are working under Visual Studio, this has no effect
+# Change ${SC_PROJECT_NAME} to the name of the target you want to start if different
+# set_property(DIRECTORY PROPERTY VS_STARTUP_PROJECT ${SC_PROJECT_NAME})
 
 # Documentation generation
 if (SC_ENABLE_DOC)
   sc_generate_doc()
 endif()
 
-# Testing
 if (BUILD_TESTING)
   include(CTest)
   add_subdirectory(test)
 endif()
-
 # Print a summary of the build configuration
 sc_print_summary()
+
+
