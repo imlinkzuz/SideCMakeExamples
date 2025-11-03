@@ -13,19 +13,25 @@ function(myproject_setup_dependencies)
 
 # Use sc_find_package to find and configure dependencies
 # you can add your own dependencies here:
- sc_find_package(PKG_TARGET fmt::fmt 
-   PKG_OPTIONS 
+ sc_find_package(
+   TARGET 
+     fmt::fmt 
+   OPTIONS 
      REQUIRED CONFIG
  )  
 
  add_compile_definitions(SPDLOG_FMT_EXTERNAL)
- sc_find_package(PKG_TARGET spdlog::spdlog 
-   PKG_OPTIONS 
+ sc_find_package(
+   TARGET 
+     spdlog::spdlog 
+   OPTIONS 
      REQUIRED CONFIG
  )
 
- sc_find_package(PKG_TARGET ShowTime::libTime 
-   PKG_OPTIONS 
+ sc_find_package(
+   TARGET 
+     ShowTime::libTime 
+   OPTIONS 
      REQUIRED CONFIG
  )
 

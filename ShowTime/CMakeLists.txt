@@ -72,6 +72,7 @@ endif()
 
 if (BUILD_TESTING)
   include(CTest)
+  enable_testing()
   add_subdirectory(test)
 endif()
 # Print a summary of the build configuration
